@@ -1,0 +1,101 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spirituality – The Search of God</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Spirituality – The Search of God</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+  <section class="hero">
+    <h2>Welcome to Your Spiritual Journey</h2>
+    <p>Explore personal vlogs, images, and thoughts on the path to spiritual enlightenment. Created and managed by you.</p>
+  </section>
+  <footer>
+    &copy; 2025 Spirituality – The Search of God
+  </footer>
+</body>
+</html>
+
+<!-- admin/config.yml -->
+backend:
+  name: github
+  repo: rchaurasiya1075/spirituality
+  branch: main
+  site_domain: rchaurasiya1075.github.io/spirituality
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" }
+
+<!-- posts/my-first-vlog.md -->
+---
+title: "My First Spiritual Blog"
+date: 2025-06-23
+image: "/images/placeholder.jpg"
+---
+Today I begin my journey of sharing wisdom, experiences, and divine energy with the world.
+
+<!-- blog.html will automatically be updated by CMS -->
+
+<!-- Add to index.html <head> for CMS -->
+<link rel="stylesheet" href="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.css" />
+<script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+<!-- style.css -->
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: #fff8e1;
+  color: #333;
+}
+header {
+  background-color: #512da8;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+nav {
+  background-color: #d1c4e9;
+  padding: 10px;
+  text-align: center;
+}
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #512da8;
+}
+.hero {
+  text-align: center;
+  padding: 40px;
+}
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+}
+
+/* script.js */
+console.log("Site loaded. Admin access via /admin/");
